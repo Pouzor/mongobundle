@@ -1,7 +1,7 @@
 Pouzor Mongo Bundle
 =================
 
-MongoBundle allow to declare and handle multiple connections using configuration fixtures for Symfony2/3.
+MongoBundle allow to declare and handle multiple connections using configuration fixtures for Symfony 2/3.
 
 1.  [Installation + configuration] (Resources/doc/index.md).
     Documentation about installation and configuration features.
