@@ -19,6 +19,7 @@ Using composer:
 
 This example shows you all the configuration options for this bundle:
 
+    #app/config/config.yml
     mongo:
         default_connection:   ftv
         connections:
@@ -41,6 +42,8 @@ This example shows you all the configuration options for this bundle:
 
 A scheme file looks like:
 
+    #app/config/mongo/default.yml
+    #This file is mandatory for now. You need to declare all your Collections here
     Game:
         fields: ~
         indexes:
@@ -53,11 +56,11 @@ A scheme file looks like:
                     unique: true
                     sparse: false
             idExt: 1
-            qualifiedAt: 1
+            qualifiedAt: -1
             lastUpdatedAt: 1
 
 
 
 
-Bon code!!
+Happy Coding!!
 
