@@ -1,5 +1,6 @@
 parameters:
     mongo.manager.class:  Pouzor\MongoBundle\Mongo\MongoManager
+    mongo.mapper.class:   Pouzor\MongoBundle\Mongo\Mapper\Mapper
 
     mongobundle.mongo.log_prefix: MongoDb start query
     create_database_command_name: mongo:db:create
@@ -13,7 +14,7 @@ services:
     mongo.manager:
         class: "%mongo.manager.class%"
         calls:
-            - [ setLogger, [ "@monolog.logger.mongo" ] ]
+       #     - [ setLogger, [ "@monolog.logger.mongo" ] ]
 
 #    mongobundle.mongo.logger:
 #        class: Pouzor\Mongo\Logger\Logger
