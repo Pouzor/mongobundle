@@ -9,5 +9,8 @@ MongoBundle allow to declare and handle multiple connections using configuration
 2.  [Repositories] (Resources/doc/repositories.md).
     Declare and use repositories for managing collections.
 
-2.  [ParamConverters] (Resources/doc/param_converter.md).
+3.  [ParamConverters] (Resources/doc/param_converter.md).
     Use parameter converters together with api features for handling urls.
+    
+4.  [How to use] (Resources/doc/usage.md).
+    Use parameter converters together with api features for handling urls.    
