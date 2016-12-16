@@ -2,7 +2,6 @@
 
 namespace Pouzor\MongoBundle;
 
-use Pouzor\MongoBundle\DependencyInjection\CompilerPass\HandlerCompilerPass;
 use Pouzor\MongoBundle\DependencyInjection\CompilerPass\RepositoryCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;

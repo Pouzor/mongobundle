@@ -98,6 +98,7 @@ class Repository implements RepositoryInterface
         }
 
         $this->initiated = $this->mongoCollection !== null && $this->mongoCollection instanceof LoggableCollection;
+
     }
 
     /**
@@ -156,6 +157,7 @@ class Repository implements RepositoryInterface
      */
     public function find($id, $fields = [])
     {
+
         $filter = ['_id' => $id instanceof \MongoId ? $id : new \MongoId($id)];
 
         if (!$this->isInitiated()) {
