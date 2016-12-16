@@ -1,0 +1,51 @@
+parameters:
+    mongo.manager.class:  Pouzor\MongoBundle\Mongo\MongoManager
+    mongo.mapper.class:   Pouzor\MongoBundle\Mongo\Mapper\Mapper
+
+    mongobundle.mongo.log_prefix: MongoDb start query
+    create_database_command_name: mongo:db:create
+    drop_database_command_name: mongo:db:drop
+    indexes_command_name: mongo:db:create-indexes
+    mongobundle.mongo.bindings: []
+
+services:
+
+#   connection manager
+    mongo.manager:
+        class: "%mongo.manager.class%"
+        calls:
+       #     - [ setLogger, [ "@monolog.logger.mongo" ] ]
+
+#    mongobundle.mongo.logger:
+#        class: Pouzor\Mongo\Logger\Logger
+#        arguments: [ "@monolog.logger.mongo", "%mongobundle.mongo.log_prefix%" ]
+#        tags:
+#            - { name: monolog.logger, channels : mongo }
+
+#   repository pool
+    mongo.pool:
+        class: Pouzor\MongoBundle\Mongo\Pool\Pool
+
+#   commands
+
+    # create database
+    mongobundle.command.create_database_command:
+        class: Pouzor\MongoBundle\Command\CreateDatabaseCommand
+        arguments: [ "%create_database_command_name%", "@mongo.manager" ]
+        tags:
+            - { name: console.command }
+
+    # drop database
+    mongobundle.command.drop_database_command:
+        class: Pouzor\MongoBundle\Command\DropDatabaseCommand
+        arguments: ["%drop_database_command_name%", "@mongo.manager" ]
+        tags:
+            - { name: console.command }
+
+#    abstract repository
+    mongobundle.repository.abstract:
+        class: Pouzor\MongoBundle\Mongo\Repository\Repository
+        abstract: true
+        calls:
+            - [ setManager, [ "@mongo.manager" ] ]
+

@@ -1,0 +1,13 @@
+/.buildpath
+/.project
+/.settings
+/build
+/nbproject
+/vendor
+/web/bundles/
+*~
+phpunit.xml
+cache.properties
+reports
+
+composer.lock

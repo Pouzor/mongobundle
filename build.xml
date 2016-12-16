@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="MongoBundle" default="build">
+    <property name="teamenv" value="ci" />
+    <property name="workspace" value="${basedir}" />
+    <property name="sourcedir" value="${workspace}/src" />
+    <property name="builddir" value="${workspace}/build" />
+    <property name="logsdir" value="${builddir}/logs" />
+    <property name="vendordir" value="${workspace}/vendor" />
+    
+    <target name="build"
+            depends="vendors,lint,phpunit"/>
+
+    <target name="vendors" description="Update vendors using composer">
+        <exec executable="bin/composer.sh" failonerror="true">
+            <arg value="update" />
+        </exec>
+    </target>
+
+    <target name="lint" description="Perform syntax check of sourcecode files (php, twig)">
+        <apply executable="php" failonerror="true">
+            <arg value="-l" />
+
+            <fileset dir="${sourcedir}">
+                <include name="**/*.php" />
+                <modified />
+            </fileset>
+        </apply>
+    </target>
+
+    <target name="phpunit" description="Run unit tests with PHPUnit">
+        <exec executable="${vendordir}/bin/phpunit" failonerror="true">
+            <arg value="--coverage-html" />
+            <arg path="${builddir}/coverage" />
+            <arg value="--coverage-clover" />
+            <arg path="${logsdir}/clover.xml" />
+            <arg value="--log-junit" />
+            <arg path="${logsdir}/junit.xml" />
+        </exec>
+    </target>
+</project>
