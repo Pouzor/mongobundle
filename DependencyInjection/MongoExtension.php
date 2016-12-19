@@ -130,10 +130,10 @@ class MongoExtension extends Extension
                 } else {
                     if (class_exists($mongoConf['repository'])) {
 
-                        if (!in_array('Pouzor\Mongo\Repository\RepositoryInterface', class_implements($mongoConf['repository']))) {
+                        if (!in_array('Pouzor\MongoBundle\Mongo\Repository\RepositoryInterface', class_implements($mongoConf['repository']))) {
                             throw new \Exception(
                                 sprintf(
-                                    "The class %s must implements Pouzor\\Mongo\\Repository\\RepositoryInterface in order to work as a mongo repository",
+                                    "The class %s must implements Pouzor\\MongoBundle\\Mongo\\Repository\\RepositoryInterface in order to work as a mongo repository",
                                     $mongoConf['repository']
                                 )
                             );

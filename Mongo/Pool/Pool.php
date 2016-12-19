@@ -83,9 +83,7 @@ class Pool implements PoolInterface
             $this->repositories[$repositoryInterface->getCollection()] = $repositoryInterface;
             $this->repositories[$repositoryInterface->getCollection()]->setPool($this);
         }
-
-
-
+        
     }
 
     public function has($repositoryName)
