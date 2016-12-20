@@ -5,7 +5,7 @@ MongoBundle allow to declare and handle multiple connections using configuration
 
 ## /!\ This bundle is for mongo.so driver (legacy).
 So it does'nt work in PHP7
-For the new driver, please check Pouzor/MongoDBBundle
+For the new driver, please check [Pouzor/MongoDBBundle] (https://github.com/Pouzor/mongoDBBundle)
 
 ### Documentation
 
