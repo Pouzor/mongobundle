@@ -15,4 +15,4 @@ MongoBundle allow to declare and handle multiple connections using configuration
     Use parameter converters together with api features for handling urls.
     
 4.  [How to use] (Resources/doc/usage.md).
-    Use parameter converters together with api features for handling urls.    
+    How to use MongoBundle in your symfony project
