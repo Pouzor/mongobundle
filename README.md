@@ -3,7 +3,11 @@ Pouzor Mongo Bundle
 
 MongoBundle allow to declare and handle multiple connections using configuration fixtures for Symfony 2/3.
 
-## /!\ This bundle is for mongo.so driver (old one). For the new driver, please check Pouzor/MongoDBBundle
+## /!\ This bundle is for mongo.so driver (legacy).
+So it does'nt work in PHP7
+For the new driver, please check Pouzor/MongoDBBundle
+
+### Documentation
 
 1.  [Installation + configuration] (Resources/doc/index.md).
     Documentation about installation and configuration features.
